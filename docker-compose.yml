@@ -1,0 +1,21 @@
+version: "3"
+services:
+  symfony:
+    build: apache-php-mysql
+    ports:
+      - "80:80"
+    volumes:
+      - ./symfony:/var/www/symfony
+      - ./apache-php-mysql/apache.conf:/etc/apache2/sites-enabled/000-default.conf
+    working_dir: /var/www/symfony
+    env_file:
+      - .env
+  composer:
+    image: composer:latest
+    working_dir: /var/www/symfony
+    volumes:
+      - ./symfony:/var/www/symfony
+  mariadb:
+    image: mariadb:10.3
+    env_file:
+      - .env
