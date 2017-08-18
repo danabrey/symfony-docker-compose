@@ -14,14 +14,11 @@
 * Apache/PHP7.1
 * MariaDB
 * Composer
-
-#### To do:
-
 * Elasticsearch
 * Redis
 * ELK stack for logs (Elasticsearch, Logstash, Kibana)
 
-Expects a symfony app within /app directory
+Expects a symfony app within /symfony directory
 
 ### Running commands
 
@@ -45,8 +42,8 @@ Elasticsearch is available at elasticsearch:9200 from any other container.
 
 Redis is available at redis:5379 from any other container.
 
-ELK stack is available during development at localhost:8080
+ELK stack is available at localhost:8080
 
 ### Hosts file
 
-symfony.dev 127.0.0.1
+127.0.0.1 symfony.dev
